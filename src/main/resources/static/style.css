@@ -14,10 +14,10 @@ header {
 
 .headline1 {
     margin: auto;
-    font-size: 2rem;
+    font-size: 3.5rem;
     text-align: left;
     font-weight: normal;
-    color: white;
+    color: #555;
     padding: 5px 20px;
 }
 nav ul {
@@ -28,11 +28,11 @@ nav ul {
 }
 
 .add-wish-box {
-    padding: 12px;
-    margin-top: 200px;
-    margin-left: 200px;
-    margin-bottom: 10px;
-    border-radius: 30px;
+    padding: 20px;
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-bottom: 80px;
+    border-radius: 18px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: block;
     clear: both;
@@ -40,8 +40,9 @@ nav ul {
     border: 2px solid #ccc;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
-    min-height: 200px;
-    min-width: 400px;
+    min-height: 70px;
+    min-width: 100px;
+    float: left;
 }
 
 .add-wish-box-add {
@@ -52,6 +53,17 @@ nav ul {
     margin: 0;
     font-size: 1.2rem;
 
+}
+.buttons h3 {
+    font-size: 80px;
+    color: #555;
+    margin-top: 100px;
+    max-width: 600px;
+}
+.buttons h4 {
+    font-size: 35px;
+    color: #555;
+    margin-top: 100px;
 }
 
 .buttons {
@@ -80,11 +92,37 @@ ul.topnav li a {
     max-width: 400px;
     line-height: 30px;
     margin-right: 200px;
-    margin-top: 30px;
+    margin-top: 60px;
     background-color: white;
     border: 2px solid #ccc;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 30px 20px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 24px 0px;
+    text-align: center;
+    margin-top: 800px;
+    width: 2020px;
+}
 
+.footer-links {
+    margin-bottom: 20px;
+}
 
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff5722;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
