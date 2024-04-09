@@ -1,5 +1,4 @@
 package com.example.wishlist.repository;
-
 import com.example.wishlist.model.Wishlist;
 import org.springframework.stereotype.Repository;
 
