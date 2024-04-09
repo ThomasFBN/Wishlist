@@ -37,18 +37,18 @@ nav ul {
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
+    max-width: 300px; /* Keep a maximum width */
+    width: 100%; /* Set the width to 100% */
     color: #333;
+    height: 50px;
 }
 
 .add-wish-box-add {
     background-color: lightblue;
-
 }
 
 .add-wish-box-update {
     background-color: lightgreen;
-
 }
 
 .add-wish-box-delete {
@@ -58,17 +58,16 @@ nav ul {
 .add-wish-text {
     margin: 0;
     font-size: 1.2rem;
-
 }
 
 .text-descriptions {
-  display: inline;
+    display: inline;
     float: right;
-
 }
 .content {
     display: flex;
     flex-direction: row;
+    margin-top: 20px; /* Adjust margin as needed */
 }
 
 .add-wish-box {
