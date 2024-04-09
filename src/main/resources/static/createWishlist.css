@@ -1,0 +1,97 @@
+body {
+    background-color: #eef3f6;
+}
+
+header {
+    padding-top: 30px;
+    min-height: 70px;
+    background: lightblue;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0;
+}
+
+.headline1 {
+    margin: auto;
+    font-size: 3.5rem;
+    text-align: left;
+    font-weight: normal;
+    color: #555;
+    padding: 5px 20px;
+}
+
+nav ul {
+    overflow: hidden;
+    margin: 0;
+    float: right;
+    padding-top: 20px;
+}
+
+ul.topnav li {
+    list-style: none;
+    float: left;
+    margin-left: 10px;
+}
+
+ul.topnav li a {
+    color: #666;
+    text-decoration: none;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.wishlist-box {
+    padding: 100px;
+    margin-top: 120px;
+    margin-left: 750px;
+    margin-bottom: 100px;
+    border-radius: 50px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
+    clear: both;
+    background-color: lightblue;
+    border: 2px solid #ccc;
+    transition: background-color 0.3s, border-color 0.3s;
+    min-height: 100px;
+    min-width: 100px;
+    float: left;
+}
+
+.wishlist-box label {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #555;
+
+}
+
+.wishlist-box button {
+    padding: 20px 50px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 80px;
+    background-color: lightgreen;
+    font-size: 17px;
+}
+
+.wishlist-box button:hover {
+    background-color: green;
+}
+
+.wishlist-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+img {
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
