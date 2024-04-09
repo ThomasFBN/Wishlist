@@ -36,7 +36,7 @@ nav ul {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: block;
     clear: both;
-    background-color: #f5f5f5;
+    background-color: #555;
     border: 2px solid #ccc;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
