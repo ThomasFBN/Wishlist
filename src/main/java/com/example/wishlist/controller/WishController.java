@@ -22,7 +22,7 @@ public class WishController {
     public String createWishList(Model model) {
         Wishlist defaultWishList = new Wishlist();
         model.addAttribute("wishList", defaultWishList);
-        return "redirect:/home";
+        return "createWishlist";
     }
 
 }
