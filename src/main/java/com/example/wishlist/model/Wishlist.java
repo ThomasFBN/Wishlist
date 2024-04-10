@@ -10,6 +10,9 @@ public class Wishlist {
         this.wishListName = wishListName;
         this.wishes = wishes;
     }
+    public Wishlist(){
+
+    }
     public String getWishListName(){
         return wishListName;
     }
