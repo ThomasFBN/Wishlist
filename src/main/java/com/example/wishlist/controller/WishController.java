@@ -28,9 +28,9 @@ public class WishController {
     }
 
     @PostMapping("/create")
-    public String wishListCreation(@ModelAttribute Wishlist wishlist) throws SQLException {
+    public String wishlistCreation(@ModelAttribute Wishlist wishlist) throws SQLException {
         wishService.createWishlist(wishlist);
-        return "redirect:/";
+        return "redirect:/createWish";
     }
 
 }
