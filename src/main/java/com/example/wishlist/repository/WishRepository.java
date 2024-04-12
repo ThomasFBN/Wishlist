@@ -11,7 +11,6 @@ import java.sql.*;
 public class WishRepository {
     private Wishlist wishlist;
 
-
     public void createWishlist(Wishlist wishlist) throws SQLException {
         Connection connection = ConnectionManager.getConnection("jdbc:mysql://wishlistdb.mysql.database.azure.com/wishlist_schema", "wishlist", "Database1");
 
