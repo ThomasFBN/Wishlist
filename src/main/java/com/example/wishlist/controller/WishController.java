@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.sql.SQLException;
+
 @Controller
 public class WishController {
     private WishService wishService;
@@ -23,6 +25,12 @@ public class WishController {
         Wishlist defaultWishList = new Wishlist();
         model.addAttribute("wishList", defaultWishList);
         return "createWishlist";
+    }
+
+    @PostMapping("/create")
+    public String wishListCreation(@ModelAttribute Wishlist wishlist) throws SQLException {
+        wishService.createWishlist(wishlist);
+        return "redirect:/";
     }
 
 }
