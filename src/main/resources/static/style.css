@@ -28,22 +28,27 @@ nav ul {
 }
 
 .add-wish-box {
-    padding: 20px;
-    margin-top: 25px;
+    padding: 10px;
+    margin-top: 15px;
     margin-left: 30px;
-    margin-bottom: 80px;
-    border-radius: 15px;
+    margin-bottom: 40px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: block;
-    clear: both;
+    display: inline-block;
     background-color: #555;
     border: 2px solid #ccc;
     text-align: center;
     transition: background-color 0.3s, border-color 0.3s;
-    min-height: 60px;
-    min-width: 70px;
-    float: left;
+    min-height: 40px;
+    min-width: 150px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
 }
+.add-wish-box:hover{
+    background-color: green;
+}
+
 
 .add-wish-box-add {
     background-color: lightgreen;

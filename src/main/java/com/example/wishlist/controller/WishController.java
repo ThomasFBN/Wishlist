@@ -32,5 +32,9 @@ public class WishController {
         wishService.createWishlist(wishlist);
         return "redirect:/createWish";
     }
+    @GetMapping("/createWish")
+    public String createWish(Model model) {
+        return "createWish";
+    }
 
 }
