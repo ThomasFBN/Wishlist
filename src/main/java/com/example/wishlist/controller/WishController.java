@@ -4,22 +4,23 @@ import com.example.wishlist.model.Wishlist;
 import com.example.wishlist.service.WishService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 
 @Controller
 public class WishController {
     private WishService wishService;
-    public WishController(WishService wishService){
+
+    public WishController(WishService wishService) {
         this.wishService = wishService;
     }
+
     @GetMapping("/home")
-    public String getHomePage(){
+    public String getHomePage() {
         return "WishList";
     }
+
     @GetMapping("/create")
     public String createWishList(Model model) {
         Wishlist defaultWishList = new Wishlist();
@@ -32,9 +33,16 @@ public class WishController {
         wishService.createWishlist(wishlist);
         return "redirect:/createWish";
     }
+
     @GetMapping("/createWish")
     public String createWish(Model model) {
         return "createWish";
     }
 
+    @PostMapping("/deleteWish")
+    public String deleteWish(@RequestParam("wishId") int wishId) throws SQLException {
+        wishService.deleteWish(wishId);
+        return "redirect:/createWish";
+    }
 }
+

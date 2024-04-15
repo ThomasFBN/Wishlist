@@ -22,4 +22,7 @@ public class WishService {
         return wishRepository.createWish(wish,listId);
     }
 
+    public void deleteWish(int wishId) throws SQLException{
+        wishRepository.deleteWish(wishId);
+    }
 }
