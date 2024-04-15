@@ -25,4 +25,8 @@ public class WishService {
     public void deleteWish(int wishId) throws SQLException{
         wishRepository.deleteWish(wishId);
     }
+    public void editWish(Wish wish, int wishId)throws SQLException{
+        wishRepository.editWish(wish, wishId);
+    }
+
 }

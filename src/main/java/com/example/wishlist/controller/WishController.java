@@ -1,5 +1,6 @@
 package com.example.wishlist.controller;
 
+import com.example.wishlist.model.Wish;
 import com.example.wishlist.model.Wishlist;
 import com.example.wishlist.service.WishService;
 import org.springframework.stereotype.Controller;
@@ -38,6 +39,13 @@ public class WishController {
     public String createWish(Model model) {
         return "createWish";
     }
+
+    @PostMapping("/editWish/{wishId}")
+    public String editWish(@ModelAttribute Wish wish, @PathVariable("wishId") int wishId) throws SQLException {
+        wishService.editWish(wish, wishId);
+        return "redirect:/createWish";
+    }
+
 
     @PostMapping("/deleteWish")
     public String deleteWish(@RequestParam("wishId") int wishId) throws SQLException {

@@ -64,7 +64,25 @@ public class WishRepository {
             ps.execute();
         }
     }
+
+    public void editWish(Wish wish, int wishId) throws SQLException {
+        Connection connection = ConnectionManager.getConnection("jdbc:mysql://wishlistdb.mysql.database.azure.com/wishlist_schema", "wishlist", "Database1");
+        String SQL = "UPDATE WISH SET NAME=?, ITEMURL=?, PRICE=? WHERE ID=?";
+
+        try (PreparedStatement ps = connection.prepareStatement(SQL)) {
+            ps.setString(1, wish.getName());
+            ps.setString(2, wish.getItemURL());
+            ps.setDouble(3, wish.getPrice());
+            ps.setInt(4, wishId);
+
+            ps.executeUpdate();
+        }
+    }
+
+
 }
+
+
 
 
 
