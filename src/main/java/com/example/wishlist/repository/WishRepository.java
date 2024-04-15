@@ -54,6 +54,16 @@ public class WishRepository {
 
         }
     }
+    public void deleteWish(int wishId) throws SQLException {
+        Connection connection = ConnectionManager.getConnection("jdbc:mysql://wishlistdb.mysql.database.azure.com/wishlist_schema", "wishlist", "Database1");
+        String SQL = "DELETE FROM WISH WHERE name = ?";
+
+        try(PreparedStatement ps = connection.prepareStatement(SQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            ps.setInt(1, wishId);
+
+            ps.execute();
+        }
+    }
 }
 
 
