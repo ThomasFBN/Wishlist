@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Find alle Attraktioner</title>
+    <link th:href="@{/showWish.css}" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="headlines">
+            <h1 class="headline1"> Her finder du alle de forskellige attraktioner i København :)</h1>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>City</th>
+            <th colspan="3">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="touristAttraction : ${attractions}">
+            <td th:text="${touristAttraction.name}"></td>
+            <td th:text="${touristAttraction.description}"></td>
+            <td th:text="${touristAttraction.city}"></td>
+            <td>
+
+                <a th:href="@{/attractions/{name}/tags(name=${touristAttraction.name})}">
+                    <button>Tags</button>
+                </a>
+            </td>
+
+            <td>
+
+                <a th:href="@{/attractions/{name}/edit(name=${touristAttraction.name})}">
+                    <button>Edit</button>
+                </a>
+
+            </td>
+
+            <td>
+                <form th:action="@{'/attractions/delete/' + ${touristAttraction.name}}" method="post" th:method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <a href="/attractions/add">
+        <button>Tilføj en ny attraktion</button>
+    </a>
+</header>
+</body>
+</html>
