@@ -75,9 +75,12 @@ public class WishController {
     }
 
     @GetMapping("/showWishlist")
-    public String showWishlist(Model model) {
+    public String showWishlist(Model model) throws SQLException {
+        List<Wishlist> wishlists = wishService.findAllWishlists();
+        model.addAttribute("wishlists", wishlists);
         return "showWishlist";
     }
+
 }
 
 

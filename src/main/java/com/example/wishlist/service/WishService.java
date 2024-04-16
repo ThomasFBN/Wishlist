@@ -40,4 +40,7 @@ public class WishService {
         return wishRepository.findAllByWishlistId(wishListId);
     }
 
+    public List<Wishlist> findAllWishlists() throws SQLException {
+        return wishRepository.findAllWishlists();
+    }
 }

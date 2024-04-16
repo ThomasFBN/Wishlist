@@ -120,5 +120,22 @@ public class WishRepository {
         }
         return wishes;
     }
+
+    public List<Wishlist> findAllWishlists() throws SQLException {
+        List<Wishlist> wishlists = new ArrayList<>();
+        Connection connection = DriverManager.getConnection(db_url, username, pwd);
+        String SQL = "SELECT * FROM WISHLIST";
+        try(PreparedStatement ps = connection.prepareStatement(SQL)){
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Wishlist wishlist = new Wishlist();
+                wishlist.setListId(rs.getInt("LISTID"));
+                wishlist.setWishListName(rs.getString("WISHLISTNAME"));
+                wishlists.add(wishlist);
+            }
+
+        }
+        return wishlists;
+    }
 }
 

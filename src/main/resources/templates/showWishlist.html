@@ -25,10 +25,10 @@
             <button>Opret ny ønskeliste</button>
             </a>
         </td>
-        <td class="show-wishlist-box">
-            <a href="/create" th:href="@{/create}">
-                <button>Opret ny ønskeliste</button>
-            </a>
+    </tr>
+    <tr th:each="wishlist : ${wishlists}">
+        <td>
+            <p th:texst="${wishlist.wishListName}"></p>
         </td>
     </tr>
 </table>
