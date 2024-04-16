@@ -70,7 +70,7 @@ h2 {
 .show-wishlist-box button {
     padding: 15px 20px;
     border: none;
-    border-radius: 15px;
+    border-radius: 55px;
     background-color: lightgreen;
     color: #333;
     font-size: 16px;
@@ -81,3 +81,20 @@ h2 {
     background-color: green;
 }
 
+.wishlist-table {
+    margin-top: 15px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    border-spacing: 20px;
+}
+
+.show-wishlist-box button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: lightgreen;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

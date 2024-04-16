@@ -11,14 +11,27 @@
         <ul class="topnav">
             <li><a href="https://www.linkedin.com/in/oliver-tvenstrup-lyksted-1394742b2/">Social</a></li>
             <li><a href="https://github.com/ThomasFBN/Wishlist">Github</a></li>
+            <li><a href="/home" th:href="@{/home}">Home</a></li>
 
         </ul>
         <h1 class="headline1">WishList</h1>
     </nav>
 </header>
 <h2>My Wishlists:</h2>
-<div class="show-wishlist-box" >
-   <button>Opret ny ønskeliste</button>
-</div>
+<table class="wishlist-table">
+    <tr>
+        <td class="show-wishlist-box">
+            <a href="/create" th:href="@{/create}">
+            <button>Opret ny ønskeliste</button>
+            </a>
+        </td>
+        <td class="show-wishlist-box">
+            <a href="/create" th:href="@{/create}">
+                <button>Opret ny ønskeliste</button>
+            </a>
+        </td>
+    </tr>
+</table>
+
 </body>
 </html>
