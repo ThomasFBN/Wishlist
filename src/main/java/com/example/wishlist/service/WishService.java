@@ -15,18 +15,29 @@ public class WishService {
     public WishService(WishRepository wishRepository) {
         this.wishRepository = wishRepository;
     }
+
     public void createWishlist(Wishlist wishlist) throws SQLException {
         wishRepository.createWishlist(wishlist);
     }
+
     public Wish createWish(Wish wish, int listId) throws SQLException {
-        return wishRepository.createWish(wish,listId);
+        return wishRepository.createWish(wish, listId);
     }
 
-    public void deleteWish(int wishId) throws SQLException{
+    public void deleteWish(int wishId) throws SQLException {
         wishRepository.deleteWish(wishId);
     }
-    public void editWish(Wish wish, int wishId)throws SQLException{
+
+    public void editWish(Wish wish, int wishId) throws SQLException {
         wishRepository.editWish(wish, wishId);
+    }
+
+    public int getHighestId() throws SQLException {
+        return wishRepository.getHighestId();
+    }
+
+    public List<Wish> findAllByWishlistId(int wishListId) throws SQLException {
+        return wishRepository.findAllByWishlistId(wishListId);
     }
 
 }

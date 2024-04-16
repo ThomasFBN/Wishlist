@@ -7,19 +7,27 @@ public class Wishlist {
     private List<Wish> wishes;
     private int listId;
 
-    public Wishlist(String wishListName, List<Wish> wishes){
+    public Wishlist(String wishListName, List<Wish> wishes) {
         this.wishListName = wishListName;
         this.wishes = wishes;
     }
-    public Wishlist(){
+
+    public Wishlist() {
 
     }
-    public String getWishListName(){
+
+    public void setWishListName(String wishListName) {
+        this.wishListName = wishListName;
+    }
+
+    public String getWishListName() {
         return wishListName;
     }
-    public List<Wish> getWishes(){
+
+    public List<Wish> getWishes() {
         return wishes;
     }
+
     public void setListId(int listId) {
         this.listId = listId;
     }
