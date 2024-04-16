@@ -5,8 +5,6 @@ public class Wish {
     private String name;
     private String itemURL;
     private double price;
-
-
     private int wishId;
 
 

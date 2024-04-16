@@ -164,9 +164,9 @@ public class WishRepository {
         List<Wishlist> wishlists = new ArrayList<>();
         Connection connection = DriverManager.getConnection(db_url, username, pwd);
         String SQL = "SELECT * FROM WISHLIST";
-        try(PreparedStatement ps = connection.prepareStatement(SQL)){
+        try (PreparedStatement ps = connection.prepareStatement(SQL)) {
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 Wishlist wishlist = new Wishlist();
                 wishlist.setListId(rs.getInt("LISTID"));
                 wishlist.setWishListName(rs.getString("WISHLISTNAME"));

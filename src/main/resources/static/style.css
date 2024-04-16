@@ -20,6 +20,7 @@ header {
     color: #555;
     padding: 5px 20px;
 }
+
 nav ul {
     overflow: hidden;
     margin: 0;
@@ -45,7 +46,8 @@ nav ul {
     color: #fff;
     text-decoration: none;
 }
-.add-wish-box:hover{
+
+.add-wish-box:hover {
     background-color: green;
 }
 
@@ -60,12 +62,14 @@ nav ul {
     color: #555;
 
 }
+
 .buttons h3 {
     font-size: 80px;
     color: #555;
     margin-top: 100px;
     max-width: 600px;
 }
+
 .buttons h4 {
     font-size: 35px;
     color: #555;
@@ -104,6 +108,7 @@ ul.topnav li a {
     border-radius: 10px;
     padding: 5px 10px;
 }
+
 footer {
     background-color: #333;
     color: #fff;

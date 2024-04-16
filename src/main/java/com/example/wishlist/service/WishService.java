@@ -39,10 +39,12 @@ public class WishService {
     public List<Wish> findAllByWishlistId(int wishListId) throws SQLException {
         return wishRepository.getWishesFromWishlistId(wishListId);
     }
-    public int findWishlistIdByWishId(int wishId) throws SQLException{
+
+    public int findWishlistIdByWishId(int wishId) throws SQLException {
         return wishRepository.findWishlistIdByWishId(wishId);
     }
-    public Wish findWishById(int wishId) throws SQLException{
+
+    public Wish findWishById(int wishId) throws SQLException {
         return wishRepository.findWishById(wishId);
     }
 

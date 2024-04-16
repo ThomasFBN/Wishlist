@@ -29,6 +29,7 @@ public class Wishlist {
     public List<Wish> getWishes() {
         return wishes;
     }
+
     public int getListId() {
         return listId;
     }

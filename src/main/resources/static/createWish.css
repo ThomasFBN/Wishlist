@@ -19,12 +19,14 @@ header {
     color: #555;
     padding: 5px 20px;
 }
+
 nav ul {
     overflow: hidden;
     margin: 0;
     float: right;
     padding-top: 20px;
 }
+
 ul.topnav li {
     list-style: none;
     float: left;
@@ -38,6 +40,7 @@ ul.topnav li a {
     text-transform: uppercase;
     font-size: 18px;
 }
+
 .add-wish-box {
     padding: 70px;
     margin-top: 110px;
@@ -54,6 +57,7 @@ ul.topnav li a {
     min-width: 70px;
     float: left;
 }
+
 .add-wish-box button {
     padding: 15px 20px;
     border: none;
@@ -64,10 +68,12 @@ ul.topnav li a {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .add-wish-box label {
     display: block;
     margin-bottom: 5px;
 }
+
 .add-wish-box input[type="text"] {
     width: 100%;
     padding: 20px;
@@ -77,6 +83,7 @@ ul.topnav li a {
     border-radius: 5px;
     transition: border-color 0.3s;
 }
+
 .add-wish-box button:hover {
     background-color: green;
 }

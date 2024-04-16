@@ -3,6 +3,7 @@ body {
     background-size: cover;
     background-color: #eef3f6;
 }
+
 .header {
 / padding-top: 30 px;
     min-height: 70px;
@@ -11,6 +12,7 @@ body {
     width: 100%;
     margin: 0;
 }
+
 .headline1 {
     margin: auto;
     font-size: 3.5rem;
@@ -38,6 +40,7 @@ th {
     background-color: lightblue;
     border-collapse: collapse;
 }
+
 tr {
     width: 33.3%;
     margin: 0;
@@ -54,7 +57,7 @@ table {
     margin-top: 30px;
 }
 
-th,td {
+th, td {
     width: 25%;
     font-family: Calibri;
 }
@@ -78,5 +81,5 @@ button {
 }
 
 button:hover {
-    background-color:green;
+    background-color: green;
 }
