@@ -5,6 +5,8 @@ import java.util.List;
 public class Wishlist {
     private String wishListName;
     private List<Wish> wishes;
+
+
     private int listId;
 
     public Wishlist(String wishListName, List<Wish> wishes) {
@@ -26,6 +28,9 @@ public class Wishlist {
 
     public List<Wish> getWishes() {
         return wishes;
+    }
+    public int getListId() {
+        return listId;
     }
 
     public void setListId(int listId) {

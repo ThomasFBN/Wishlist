@@ -5,6 +5,8 @@ public class Wish {
     private String name;
     private String itemURL;
     private double price;
+
+
     private int wishId;
 
 
@@ -29,6 +31,11 @@ public class Wish {
     public double getPrice() {
         return price;
     }
+
+    public int getWishId() {
+        return wishId;
+    }
+
 
     public void setName(String name) {
         this.name = name;

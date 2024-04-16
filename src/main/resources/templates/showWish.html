@@ -2,14 +2,14 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Find alle Attraktioner</title>
+    <title>WishList</title>
     <link th:href="@{/showWish.css}" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header">
         <div class="headlines">
-            <h1 class="headline1"> Here you find all of your added wishes from your wishlist!</h1>
+            <h1 class="headline1">Here you find all of your added wishes from your wishlist!</h1>
         </div>
     </div>
 
@@ -19,37 +19,29 @@
             <th>Name</th>
             <th>Price</th>
             <th>Link</th>
-            <th colspan="3">Actions</th>
+            <th colspan="2">Actions</th>
         </tr>
         </thead>
         <tbody>
-        <div class="container"></div>
-        <tr th:each="Wish : ${showWish}">
-            <td th:text="${Wish.Name}"></td>
-            <td th:text="${Wish.Price}"></td>
-            <td th:text="${Wish.Link}"></td>
+        <tr th:each="wish : ${wishes}">
+            <td th:text="${wish.name}"></td>
+            <td th:text="${wish.price}"></td>
+            <td th:text="${wish.itemURL}"></td>
             <td>
-
-            <td>
-
-                <a th:href="@{/attractions/{name}/edit(name=${touristAttraction.name})}">
+                <a th:href="@{'/editWish/' + ${wish.wishId}}">
                     <button>Edit</button>
                 </a>
-
             </td>
-
             <td>
-                <form th:action="@{'/attractions/delete/' + ${touristAttraction.name}}" method="post" th:method="post">
+                <form th:action="@{'/deleteWish/' + ${wish.wishId}}" method="post">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
-
             </td>
-
         </tr>
         </tbody>
     </table>
     <br>
-    <a href="/attractions/add">
+    <a th:href="@{'/createWish/' + ${listId}}">
         <button>Add a new wish</button>
     </a>
 </header>

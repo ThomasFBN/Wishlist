@@ -67,7 +67,7 @@ public class WishRepository {
 
     public void deleteWish(int wishId) throws SQLException {
         Connection connection = ConnectionManager.getConnection(db_url, username, pwd);
-        String SQL = "DELETE FROM WISH WHERE name = ?";
+        String SQL = "DELETE FROM WISH WHERE WISHID = ?";
 
         try (PreparedStatement ps = connection.prepareStatement(SQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, wishId);
@@ -78,7 +78,7 @@ public class WishRepository {
 
     public void editWish(Wish wish, int wishId) throws SQLException {
         Connection connection = ConnectionManager.getConnection(db_url, username, pwd);
-        String SQL = "UPDATE WISH SET NAME=?, ITEMURL=?, PRICE=? WHERE ID=?";
+        String SQL = "UPDATE WISH SET NAME=?, ITEMURL=?, PRICE=? WHERE WISHID=?";
 
         try (PreparedStatement ps = connection.prepareStatement(SQL)) {
             ps.setString(1, wish.getName());
@@ -87,6 +87,45 @@ public class WishRepository {
             ps.setInt(4, wishId);
 
             ps.executeUpdate();
+        }
+    }
+
+    public Wish findWishById(int wishId) throws SQLException {
+        Connection connection = ConnectionManager.getConnection(db_url, username, pwd);
+        String SQL = "SELECT * FROM WISH WHERE WISHID = ?";
+
+        try (PreparedStatement ps = connection.prepareStatement(SQL)) {
+            ps.setInt(1, wishId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    Wish wish = new Wish();
+                    wish.setWishId(rs.getInt("WISHID"));
+                    wish.setName(rs.getString("NAME"));
+                    wish.setItemURL(rs.getString("ITEMURL"));
+                    wish.setPrice(rs.getDouble("PRICE"));
+                    return wish;
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
+
+    public int findWishlistIdByWishId(int wishId) throws SQLException {
+        Connection connection = ConnectionManager.getConnection(db_url, username, pwd);
+        String SQL = "SELECT LISTID FROM WISH WHERE WISHID = ?";
+
+        try (PreparedStatement ps = connection.prepareStatement(SQL)) {
+            ps.setInt(1, wishId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("LISTID");
+                } else {
+                    return 0;
+                }
+            }
         }
     }
 
@@ -101,7 +140,7 @@ public class WishRepository {
         return rs.getInt("MAX(LISTID)");
     }
 
-    public List<Wish> findAllByWishlistId(int wishlistId) throws SQLException {
+    public List<Wish> getWishesFromWishlistId(int wishlistId) throws SQLException {
         List<Wish> wishes = new ArrayList<>();
         Connection connection = DriverManager.getConnection(db_url, username, pwd);
         String SQL = "SELECT * FROM WISH WHERE LISTID = ?";
@@ -137,5 +176,7 @@ public class WishRepository {
         }
         return wishlists;
     }
+
+
 }
 

@@ -51,23 +51,34 @@ public class WishController {
         return "redirect:/showWish/" + id;
     }
 
+    @GetMapping("/editWish/{id}")
+    public String getEditWishForm(@PathVariable("id") int id, Model model) throws SQLException {
+        Wish wish = wishService.findWishById(id);
+        model.addAttribute("wish", wish);
+        return "editWish";
+    }
+
 
     @PostMapping("/editWish/{id}")
     public String editWish(@ModelAttribute Wish wish, @PathVariable("id") int id) throws SQLException {
         wishService.editWish(wish, id);
-        return "redirect:/createWish";
+        int wishlistId = wishService.findWishlistIdByWishId(id);
+        return "redirect:/showWish/" + wishlistId;
     }
 
 
     @PostMapping("/deleteWish/{id}")
-    public String deleteWish(@RequestParam("id") int id) throws SQLException {
+    public String deleteWish(@PathVariable("id") int id) throws SQLException {
+        int wishlistId = wishService.findWishlistIdByWishId(id);
         wishService.deleteWish(id);
-        return "redirect:/createWish";
+        return "redirect:/showWish/" + wishlistId;
     }
+
 
     @GetMapping("/showWish/{id}")
     public String showWish(@PathVariable("id") int id, Model model) throws SQLException {
         List<Wish> wishes = wishService.findAllByWishlistId(id);
+        model.addAttribute("listId", id);
 
         model.addAttribute("wishes", wishes);
 

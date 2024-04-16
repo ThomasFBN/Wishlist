@@ -22,16 +22,17 @@
     <tr>
         <td class="show-wishlist-box">
             <a href="/create" th:href="@{/create}">
-            <button>Opret ny ønskeliste</button>
+                <button>Opret ny ønskeliste</button>
             </a>
         </td>
     </tr>
     <tr th:each="wishlist : ${wishlists}">
         <td>
-            <p th:texst="${wishlist.wishListName}"></p>
+            <a th:href="@{'/showWish/' + ${wishlist.listId}}">
+                <p th:text="${wishlist.wishListName}"></p>
+            </a>
         </td>
     </tr>
 </table>
-
 </body>
 </html>
