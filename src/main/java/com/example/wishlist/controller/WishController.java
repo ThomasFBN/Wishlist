@@ -52,10 +52,17 @@ public class WishController {
         wishService.deleteWish(wishId);
         return "redirect:/createWish";
     }
+
     @GetMapping("/showWish")
     public String showWish(Model model) {
         return "showWish";
     }
 
+
+    @GetMapping("/showWishlist")
+    public String showWishlist(Model model) {
+        return "showWishlist";
+    }
 }
+
 
