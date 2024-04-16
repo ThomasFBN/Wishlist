@@ -9,7 +9,7 @@
 <header>
     <div class="header">
         <div class="headlines">
-            <h1 class="headline1"> Her finder du alle de forskellige attraktioner i København :)</h1>
+            <h1 class="headline1"> Here you find all of your added wishes from your wishlist!</h1>
         </div>
     </div>
 
@@ -17,22 +17,18 @@
         <thead>
         <tr>
             <th>Name</th>
-            <th>Description</th>
-            <th>City</th>
+            <th>Price</th>
+            <th>Link</th>
             <th colspan="3">Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="touristAttraction : ${attractions}">
-            <td th:text="${touristAttraction.name}"></td>
-            <td th:text="${touristAttraction.description}"></td>
-            <td th:text="${touristAttraction.city}"></td>
+        <div class="container"></div>
+        <tr th:each="Wish : ${showWish}">
+            <td th:text="${Wish.Name}"></td>
+            <td th:text="${Wish.Price}"></td>
+            <td th:text="${Wish.Link}"></td>
             <td>
-
-                <a th:href="@{/attractions/{name}/tags(name=${touristAttraction.name})}">
-                    <button>Tags</button>
-                </a>
-            </td>
 
             <td>
 
@@ -54,7 +50,7 @@
     </table>
     <br>
     <a href="/attractions/add">
-        <button>Tilføj en ny attraktion</button>
+        <button>Add a new wish</button>
     </a>
 </header>
 </body>
