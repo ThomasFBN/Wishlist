@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ønskelist</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/createWish.css}">
 </head>
 <body>
-
+<header>
+    <nav>
+        <ul class="topnav">
+            <li><a href="https://www.linkedin.com/in/oliver-tvenstrup-lyksted-1394742b2/"
+                   th:href="@{https://www.linkedin.com/in/oliver-tvenstrup-lyksted-1394742b2/}">Social</a></li>
+            <li><a href="https://github.com/ThomasFBN/Wishlist" th:href="@{https://github.com/ThomasFBN/Wishlist}">Github</a>
+            </li>
+            <li><a href="/home" th:href="@{/home}">Home</a></li>
+        </ul>
+        <h1 class="headline1">WishList</h1>
+    </nav>
+</header>
+<div class="add-wish-box">
+    <form method="post" th:action="@{/editWish/{id}(id=${wish.wishId})}">
+        <input type="hidden" name="wishId" th:value="${wish.wishId}">
+        <label for="wish-name">Insert name:</label>
+        <input type="text" id="wish-name" name="name" placeholder="Enter wish name..." th:value="${wish.name}">
+        <label for="wish-link">Insert link:</label>
+        <input type="text" id="wish-link" name="itemURL" placeholder="Enter your link here..."
+               th:value="${wish.itemURL}">
+        <label for="wish-price">Insert price:</label>
+        <input type="text" id="wish-price" name="price" placeholder="Enter wish price..." th:value="${wish.price}">
+        <button type="submit">Edit Wish</button>
+    </form>
+</div>
 </body>
 </html>
