@@ -20,6 +20,14 @@ body {
     padding: 5px 20px;
 }
 
+.headline2 {
+    color: #555;
+    text-align: center;
+    font-family: "Calibri";
+    font-size: 28px;
+    border-bottom: 2px solid black;
+}
+
 th {
     width: 100%;
     font-family: Calibri;
@@ -58,13 +66,13 @@ td {
     width: 33.3%
 }
 
-
 nav ul {
     overflow: hidden;
     margin: 0;
     float: right;
     padding-top: 20px;
 }
+
 ul.topnav li {
     list-style: none;
     float: left;
