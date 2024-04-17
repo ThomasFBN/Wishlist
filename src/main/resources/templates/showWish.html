@@ -15,14 +15,13 @@
             </li>
             <li><a href="/home" th:href="@{/home}">Home</a></li>
         </ul>
-        <h1 class="headline1"></h1>
     </nav>
     <div class="header">
         <div class="headlines">
             <h1 class="headline1">WishList</h1>
         </div>
     </div>
-</header>
+
     <table>
         <thead>
         <tr>
@@ -36,7 +35,7 @@
         <tr th:each="wish : ${wishes}">
             <td th:text="${wish.name}"></td>
             <td th:text="${wish.price}"></td>
-            <td th:text="${wish.itemURL}"></td>
+            <td><a th:href="${wish.itemURL}" target="_blank" th:text="${wish.itemURL}">Link</a></td>
             <td>
                 <a th:href="@{'/editWish/' + ${wish.wishId}}">
                     <button>Edit</button>
@@ -54,5 +53,6 @@
     <a th:href="@{'/createWish/' + ${listId}}">
         <button>Add a new wish</button>
     </a>
+</header>
 </body>
 </html>
