@@ -68,12 +68,17 @@ nav ul {
     color: #555;
     margin-top: 100px;
     max-width: 600px;
+    margin-left: 26px;
 }
 
 .buttons h4 {
     font-size: 30px;
     color: #555;
     margin-top: 100px;
+    margin-left: 26px;
+}
+.buttons a{
+    margin-left: 0px;
 }
 
 .buttons {
