@@ -19,17 +19,18 @@
 </header>
 <h2>My Wishlists:</h2>
 <table class="wishlist-table">
+
+    <tr th:each="wishlist : ${wishlists}" class="wishlist-row">
+        <td>
+            <a th:href="@{'/showWish/' + ${wishlist.listId}}">
+                <p th:text="${wishlist.wishListName}"></p>
+            </a>
+        </td>
+    </tr>
     <tr>
         <td class="show-wishlist-box">
             <a href="/create" th:href="@{/create}">
                 <button>Opret ny ønskeliste</button>
-            </a>
-        </td>
-    </tr>
-    <tr th:each="wishlist : ${wishlists}">
-        <td>
-            <a th:href="@{'/showWish/' + ${wishlist.listId}}">
-                <p th:text="${wishlist.wishListName}"></p>
             </a>
         </td>
     </tr>
