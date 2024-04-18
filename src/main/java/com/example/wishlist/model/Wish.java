@@ -13,6 +13,12 @@ public class Wish {
         this.itemURL = itemURL;
         this.price = price;
     }
+    public Wish(String itemName, String itemURL, double price, int wishId) {
+        this.name = itemName;
+        this.itemURL = itemURL;
+        this.price = price;
+        this.wishId = wishId;
+    }
 
     public Wish() {
 

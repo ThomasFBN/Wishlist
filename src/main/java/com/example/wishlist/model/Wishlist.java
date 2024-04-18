@@ -5,13 +5,16 @@ import java.util.List;
 public class Wishlist {
     private String wishListName;
     private List<Wish> wishes;
-
-
     private int listId;
 
     public Wishlist(String wishListName, List<Wish> wishes) {
         this.wishListName = wishListName;
         this.wishes = wishes;
+    }
+
+    public Wishlist(String wishListName, int listId) {
+        this.wishListName = wishListName;
+        this.listId = listId;
     }
 
     public Wishlist() {
