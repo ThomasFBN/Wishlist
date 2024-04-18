@@ -36,7 +36,7 @@ public class WishService {
         return wishRepository.getHighestId();
     }
 
-    public List<Wish> findAllByWishlistId(int wishListId) throws SQLException {
+    public List<Wish> getWishesFromWishlistId (int wishListId) throws SQLException {
         return wishRepository.getWishesFromWishlistId(wishListId);
     }
 

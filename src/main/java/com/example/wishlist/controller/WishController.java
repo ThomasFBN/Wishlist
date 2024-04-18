@@ -77,7 +77,7 @@ public class WishController {
 
     @GetMapping("/showWish/{id}")
     public String showWish(@PathVariable("id") int id, Model model) throws SQLException {
-        List<Wish> wishes = wishService.findAllByWishlistId(id);
+        List<Wish> wishes = wishService.getWishesFromWishlistId(id);
         model.addAttribute("listId", id);
 
         model.addAttribute("wishes", wishes);

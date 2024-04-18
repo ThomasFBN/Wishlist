@@ -109,7 +109,7 @@ public class WishControllerTest {
                 new Wish("Test Wish 1", "http://example.com/1", 10.0, 1),
                 new Wish("Test Wish 2", "http://example.com/2", 20.0, 2)
         );
-        when(wishService.findAllByWishlistId(eq(wishlistId))).thenReturn(wishes);
+        when(wishService.getWishesFromWishlistId(eq(wishlistId))).thenReturn(wishes);
 
         mockMvc.perform(get("/showWish/{id}", wishlistId))
                 .andExpect(status().isOk())
